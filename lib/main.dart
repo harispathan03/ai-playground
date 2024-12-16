@@ -3,6 +3,7 @@ import 'package:ai_playground/util/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'view_model/emotion_detection_model.dart';
 import 'view_model/face_detection_viewmodel.dart';
 import 'view_model/face_recognition_model.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => FaceDetectionModel()),
         ChangeNotifierProvider(create: (_) => FaceRecognitionModel()),
-        // ChangeNotifierProvider(create: (_) => EmotionDetectionModel()),
+        ChangeNotifierProvider(create: (_) => EmotionDetectionModel()),
       ],
       child: MaterialApp(
         title: 'AI Playground',

@@ -2,6 +2,7 @@ import 'package:ai_playground/widget/home_button.dart';
 import 'package:flutter/material.dart';
 
 import '../util/colors.dart';
+import 'emotion_detection_page.dart';
 import 'face_detection_page.dart';
 import 'face_recognition_page.dart';
 
@@ -39,7 +40,10 @@ class HomePage extends StatelessWidget {
                       builder: (context) => const FaceRecognitionPage())),
                   child: const HomeButton(text: "Face recognition")),
               const SizedBox(height: 10),
-              const HomeButton(text: "Emotion detection"),
+              InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const EmotionDetectionPage())),
+                  child: const HomeButton(text: "Emotion detection")),
             ],
           ),
         ),
