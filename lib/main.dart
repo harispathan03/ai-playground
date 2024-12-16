@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'view_model/face_detection_viewmodel.dart';
+import 'view_model/face_recognition_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => FaceDetectionModel()),
-        // ChangeNotifierProvider(create: (_) => FaceRecognitionModel()),
+        ChangeNotifierProvider(create: (_) => FaceRecognitionModel()),
         // ChangeNotifierProvider(create: (_) => EmotionDetectionModel()),
       ],
       child: MaterialApp(

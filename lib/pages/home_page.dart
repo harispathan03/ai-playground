@@ -2,6 +2,8 @@ import 'package:ai_playground/widget/home_button.dart';
 import 'package:flutter/material.dart';
 
 import '../util/colors.dart';
+import 'face_detection_page.dart';
+import 'face_recognition_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,18 +21,25 @@ class HomePage extends StatelessWidget {
         foregroundColor: white,
         backgroundColor: darkPinkColor,
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              HomeButton(text: "Face detection - Count people"),
-              SizedBox(height: 10),
-              HomeButton(text: "Face recognition"),
-              SizedBox(height: 10),
-              HomeButton(text: "Emotion detection"),
+              InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const FaceDetectionPage())),
+                  child:
+                      const HomeButton(text: "Face detection - Count people")),
+              const SizedBox(height: 10),
+              InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const FaceRecognitionPage())),
+                  child: const HomeButton(text: "Face recognition")),
+              const SizedBox(height: 10),
+              const HomeButton(text: "Emotion detection"),
             ],
           ),
         ),
